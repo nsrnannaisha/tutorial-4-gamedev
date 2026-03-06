@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://btx86ewyydvj0" path="res://scenes/AreaTrigger.gd" id="1_iuiid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iuiid"]
-size = Vector2(3091, 171)
+size = Vector2(4122.5, 171)
 
 [node name="Area2D" type="Area2D" unique_id=1643904326]
 script = ExtResource("1_iuiid")

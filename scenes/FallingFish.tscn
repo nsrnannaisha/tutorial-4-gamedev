@@ -19,4 +19,4 @@ flip_v = true
 position = Vector2(2, 0)
 shape = SubResource("CapsuleShape2D_gccpt")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_FallArea_body_entered"]
