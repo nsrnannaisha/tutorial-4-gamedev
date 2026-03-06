@@ -1,9 +1,9 @@
 extends RigidBody2D
 
-@export var sceneName = "LoseScreen"
+@export var sceneName: String = "LoseScreen"
 
-func _on_FallArea_body_entered(body):
-	if body.get_name() == "Player":
-		get_tree().change_scene_to_file(str("res://scenes/" + sceneName + ".tscn"))
+func _on_body_entered(body: Node) -> void:
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://scenes/" + sceneName + ".tscn")
 	else:
-		body.queue_free()
+		queue_free()

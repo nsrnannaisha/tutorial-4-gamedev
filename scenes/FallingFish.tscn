@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://b118pvmscylk6"]
 
-[ext_resource type="Script" uid="uid://c2qefjxdlssmw" path="res://FallingFish.gd" id="1_o72ex"]
+[ext_resource type="Script" uid="uid://s76cir6io5n4" path="res://scenes/FallingFish.gd" id="2_gccpt"]
 [ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="2_o72ex"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gccpt"]
 radius = 42.0
 height = 128.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_clc22"]
+radius = 43.0
+height = 124.0
+
 [node name="RigidBody2D" type="RigidBody2D" unique_id=1344950792]
-script = ExtResource("1_o72ex")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242627999]
 texture = ExtResource("2_o72ex")
@@ -19,4 +22,10 @@ flip_v = true
 position = Vector2(2, 0)
 shape = SubResource("CapsuleShape2D_gccpt")
 
-[connection signal="body_entered" from="." to="." method="_on_FallArea_body_entered"]
+[node name="Area2D" type="Area2D" parent="." unique_id=1287425137]
+script = ExtResource("2_gccpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=603876754]
+shape = SubResource("CapsuleShape2D_clc22")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

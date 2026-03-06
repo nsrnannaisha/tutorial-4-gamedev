@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://bf3xyhf046nes"]
 
-[ext_resource type="Script" uid="uid://py15d5itikkn" path="res://scenes/Star.gd" id="1_t7biv"]
 [ext_resource type="Texture2D" uid="uid://bfpt4n245ef1h" path="res://assets/kenney_platformerpack/PNG/Items/star.png" id="2_xpnm2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4p0dt"]
 radius = 23.0
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=1565194237]
-script = ExtResource("1_t7biv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=293657439]
 texture = ExtResource("2_xpnm2")

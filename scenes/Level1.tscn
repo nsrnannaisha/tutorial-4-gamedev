@@ -73,6 +73,6 @@ position = Vector2(1452.8379, 135.86328)
 sceneName = "WinScreen"
 
 [node name="Spawner" type="Node2D" parent="." unique_id=1032591121]
-position = Vector2(1440, -1517)
+position = Vector2(1482, -586)
 script = ExtResource("5_lrl65")
 obstacle = ExtResource("6_76388")
