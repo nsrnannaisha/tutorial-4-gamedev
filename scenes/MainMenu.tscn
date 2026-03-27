@@ -16,7 +16,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 50
+theme_override_constants/separation = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=80024804]
 layout_mode = 2
@@ -25,8 +25,9 @@ size_flags_vertical = 4
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=908658234]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8158411, 0.6114352, 0.6853869, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_h7a2f")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 120
 text = "Alien jump!"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=481056891]
@@ -49,8 +50,10 @@ theme_override_colors/font_outline_color = Color(0.8158411, 0.6114352, 0.6853869
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qoqlk")
 theme_override_font_sizes/font_size = 45
-text = "Stage Select"
+text = "Level Select"
 underline = 1
+script = ExtResource("3_ow34m")
+scene_to_load = "SelectLevel"
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1496811035]
 layout_mode = 2
@@ -65,3 +68,4 @@ expand_mode = 1
 stretch_mode = 5
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" method="_on_New_Game_pressed"]

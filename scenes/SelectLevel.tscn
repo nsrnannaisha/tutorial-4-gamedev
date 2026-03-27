@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bjjjwutfrhsi8"]
+
+[ext_resource type="FontFile" uid="uid://cd6fhwgv50de7" path="res://assets/font/Pixel Game.otf" id="1_6pd22"]
+[ext_resource type="FontFile" uid="uid://by8f5r0anxmal" path="res://assets/font/MotionControl-Bold.otf" id="2_adu0t"]
+[ext_resource type="Script" uid="uid://vta68qudkm82" path="res://scenes/StartGame.gd" id="3_6pd22"]
+[ext_resource type="Script" uid="uid://bwtroddy73d7n" path="res://scenes/BackMainMenu.gd" id="5_adu0t"]
+
+[node name="SelectLevel" type="MarginContainer" unique_id=311181910]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1058583418]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=791996412]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 70
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=203740742]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.8156863, 0.6117647, 0.6862745, 1)
+theme_override_fonts/font = ExtResource("1_6pd22")
+theme_override_font_sizes/font_size = 90
+text = "               Select Stage               "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=218845180]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Level1" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=249858765]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.8094223, 0.60696787, 0.6809415, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_adu0t")
+theme_override_font_sizes/font_size = 55
+text = "Stage 1"
+underline = 1
+script = ExtResource("3_6pd22")
+scene_to_load = "Level1"
+
+[node name="Level2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=479358503]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.8094223, 0.60696787, 0.6809415, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_adu0t")
+theme_override_font_sizes/font_size = 55
+text = "Stage 2"
+underline = 1
+script = ExtResource("3_6pd22")
+scene_to_load = "Level2"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1624236876]
+layout_mode = 2
+
+[node name="Back" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1681021836]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.8156863, 0.6117647, 0.6862745, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_adu0t")
+theme_override_font_sizes/font_size = 45
+text = "⤶ Back"
+underline = 1
+script = ExtResource("5_adu0t")
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Level1" to="HBoxContainer/VBoxContainer/VBoxContainer/Level1" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Level2" to="HBoxContainer/VBoxContainer/VBoxContainer/Level2" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer2/Back" to="HBoxContainer/VBoxContainer/VBoxContainer2/Back" method="_on_New_Game_pressed"]

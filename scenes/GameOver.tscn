@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://ceqpn0eg7xixr"]
 
 [ext_resource type="FontFile" uid="uid://by8f5r0anxmal" path="res://assets/font/MotionControl-Bold.otf" id="1_6bcno"]
+[ext_resource type="Texture2D" uid="uid://caagct4qorsvf" path="res://assets/kenney_platformerpack/PNG/Players/Variable sizes/Pink/alienPink_jump.png" id="2_qae0b"]
+[ext_resource type="Script" uid="uid://bwtroddy73d7n" path="res://scenes/BackMainMenu.gd" id="2_vuicl"]
 
 [node name="GameOver" type="ColorRect" unique_id=1120277137]
 anchors_preset = 15
@@ -8,14 +10,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.9748457, 0.29637697, 0.25219935, 1)
+color = Color(0.929626, 0.35760197, 0.31589827, 1)
 
-[node name="Label" type="Label" parent="." unique_id=675460075]
-layout_mode = 0
-offset_left = 302.0
-offset_top = 236.0
-offset_right = 854.0
-offset_bottom = 387.0
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=719897361]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1942391639]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=675460075]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_6bcno")
-theme_override_font_sizes/font_size = 150
-text = "Game Over"
+theme_override_font_sizes/font_size = 135
+text = "Game Over!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1813482668]
+layout_mode = 2
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1565202083]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.8156863, 0.6117647, 0.6862745, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_6bcno")
+theme_override_font_sizes/font_size = 45
+text = "Back to Main Menu"
+underline = 1
+script = ExtResource("2_vuicl")
+scene_to_load = "MainMenu"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=386517598]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=270484874]
+layout_mode = 2
+texture = ExtResource("2_qae0b")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_New_Game_pressed"]
