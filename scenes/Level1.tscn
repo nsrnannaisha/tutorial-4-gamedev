@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="4_lrl65"]
 [ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/Spawner.gd" id="5_lrl65"]
 [ext_resource type="PackedScene" uid="uid://b118pvmscylk6" path="res://scenes/FallingFish.tscn" id="6_76388"]
+[ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="7_svatc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
 texture = ExtResource("2_bwv4p")
@@ -61,18 +62,22 @@ position = Vector2(71, 72)
 tile_map_data = PackedByteArray("AAAAAAEAAQADAAAAAAABAAEAAQAHAAEAAAABAAIAAQABAAAAAAAFAAIAAQAHAAEAAAAVAAIAAQAHAAEAAAAWAAIAAQAHAAEAAAAXAAIAAQAHAAEAAAAYAAIAAQAHAAEAAAAEAAIAAQAHAAEAAAAGAAIAAQAHAAEAAAAHAAIAAQAHAAEAAAAIAAIAAQAHAAEAAAAFAAMAAQABAAAAAAAGAAMAAQABAAAAAAAHAAMAAQABAAAAAAAIAAMAAQABAAAAAAAUAAIAAQAHAAEAAAAKAAMAAQABAAEAAAALAAMAAQACAAEAAAAMAAMAAQACAAEAAAAOAAIAAQAFAAEAAAAOAAMAAQAIAAAAAAAPAAIAAQAHAAEAAAAQAAIAAQAHAAEAAAATAAIAAQAHAAEAAAASAAIAAQAHAAEAAAARAAIAAQAHAAEAAAAPAAMAAQABAAAAAAAPAAQAAQABAAAAAAAOAAQAAQABAAAAAAAWAAMAAQABAAAAAAAVAAMAAQABAAAAAAAUAAMAAQABAAAAAAATAAMAAQABAAAAAAASAAMAAQABAAAAAAARAAMAAQABAAAAAAAQAAMAAQABAAAAAAACAAIAAQAHAAEAAAADAAIAAQAHAAEAAAA=")
 tile_set = SubResource("TileSet_dw26h")
 
-[node name="Area2D" parent="." unique_id=1392372150 instance=ExtResource("3_dw26h")]
+[node name="LoseArea" parent="." unique_id=1392372150 instance=ExtResource("3_dw26h")]
 position = Vector2(1565, 809)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=454593730]
 position = Vector2(3002, 13)
 texture = ExtResource("4_lrl65")
 
-[node name="Area2D" parent="Sprite2D" unique_id=1643904326 instance=ExtResource("3_dw26h")]
-position = Vector2(1452.8379, 135.86328)
+[node name="WinAreaArea2D" parent="Sprite2D" unique_id=1643904326 instance=ExtResource("3_dw26h")]
+position = Vector2(1929, 136)
 sceneName = "WinScreen"
 
 [node name="Spawner" type="Node2D" parent="." unique_id=1032591121]
 position = Vector2(1482, -586)
 script = ExtResource("5_lrl65")
 obstacle = ExtResource("6_76388")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1393254125]
+
+[node name="Life Counter" parent="CanvasLayer" unique_id=946281734 instance=ExtResource("7_svatc")]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ceqpn0eg7xixr"]
+
+[ext_resource type="FontFile" uid="uid://by8f5r0anxmal" path="res://assets/font/MotionControl-Bold.otf" id="1_6bcno"]
+
+[node name="GameOver" type="ColorRect" unique_id=1120277137]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9748457, 0.29637697, 0.25219935, 1)
+
+[node name="Label" type="Label" parent="." unique_id=675460075]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 236.0
+offset_right = 854.0
+offset_bottom = 387.0
+theme_override_fonts/font = ExtResource("1_6bcno")
+theme_override_font_sizes/font_size = 150
+text = "Game Over"

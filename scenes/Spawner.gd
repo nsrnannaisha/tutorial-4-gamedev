@@ -2,7 +2,7 @@ extends Node2D
 
 @export var obstacle : PackedScene
 
-func _ready():
+func ready():
 	repeat()
 
 func spawn():
@@ -16,5 +16,5 @@ func spawn():
 
 func repeat():
 	spawn()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(5).timeout
 	repeat()

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://751ou282p0pr"]
+
+[ext_resource type="Script" uid="uid://cac30h4al1wtu" path="res://LifeCounter.gd" id="1_wysaa"]
+[ext_resource type="FontFile" uid="uid://by8f5r0anxmal" path="res://assets/font/MotionControl-Bold.otf" id="1_ybyj6"]
+
+[node name="Life Counter" type="MarginContainer" unique_id=946281734]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=509618406]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.8158411, 0.6114352, 0.6853869, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_ybyj6")
+theme_override_font_sizes/font_size = 50
+script = ExtResource("1_wysaa")
